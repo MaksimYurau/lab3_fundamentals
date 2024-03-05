@@ -10,10 +10,13 @@ import com.raywenderlich.android.lab3.screens.AlertDialogScreen
 import com.raywenderlich.android.lab3.screens.BoxScreen
 import com.raywenderlich.android.lab3.screens.ColumnScreen
 import com.raywenderlich.android.lab3.screens.ExploreButtonsScreen
+import com.raywenderlich.android.lab3.screens.GridScreen
+import com.raywenderlich.android.lab3.screens.ListScreen
 import com.raywenderlich.android.lab3.screens.NavigationScreen
 import com.raywenderlich.android.lab3.screens.ProgressIndicatorScreen
 import com.raywenderlich.android.lab3.screens.RowScreen
 import com.raywenderlich.android.lab3.screens.ScaffoldScreen
+import com.raywenderlich.android.lab3.screens.ScrollingScreen
 import com.raywenderlich.android.lab3.screens.SurfaceScreen
 import com.raywenderlich.android.lab3.screens.TextFieldScreen
 import com.raywenderlich.android.lab3.screens.TextScreen
@@ -34,6 +37,9 @@ fun FundamentalsApp() {
                 is Screen.Box -> BoxScreen()
                 is Screen.Surface -> SurfaceScreen()
                 is Screen.Scaffold -> ScaffoldScreen()
+                is Screen.Scrolling -> ScrollingScreen()
+                is Screen.List -> ListScreen()
+                is Screen.Grid -> GridScreen()
             }
         }
     }
