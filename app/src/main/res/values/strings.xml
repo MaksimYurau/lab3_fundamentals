@@ -22,5 +22,9 @@
     <string name="third">третий</string>
     <string name="iconContentDescription">меню</string>
     <string name="topAppBarTitle">MyComposeApp</string>
+    <string name="android">android</string>
+    <string name="kotlin">kotlin</string>
+    <string name="swift">swift</string>
+    <string name="ios">ios</string>
 
 </resources>
