@@ -3,7 +3,9 @@ package com.raywenderlich.android.lab3.screens
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
@@ -30,11 +32,19 @@ fun ScrollingScreen() {
 
 @Composable
 fun MyScrollingScreen(modifier: Modifier = Modifier) {
+    Row(modifier = modifier.horizontalScroll(rememberScrollState())) {
+        BookImage(R.drawable.advanced_architecture_android, R.string.advanced_architecture_android)
+        BookImage(R.drawable.kotlin_aprentice, R.string.kotlin_aprentice)
+        BookImage(R.drawable.kotlin_coroutines, R.string.kotlin_coroutines)
+    }
+
+    /*
     Column(modifier = modifier.verticalScroll(rememberScrollState())) {
         BookImage(R.drawable.advanced_architecture_android, R.string.advanced_architecture_android)
         BookImage(R.drawable.kotlin_aprentice, R.string.kotlin_aprentice)
         BookImage(R.drawable.kotlin_coroutines, R.string.kotlin_coroutines)
     }
+     */
 }
 
 @Composable
