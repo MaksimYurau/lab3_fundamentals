@@ -26,5 +26,12 @@
     <string name="kotlin">kotlin</string>
     <string name="swift">swift</string>
     <string name="ios">ios</string>
+    <string name="button_scrolling">Прокрутка</string>
+    <string name="button_list">List</string>
+    <string name="button_grid">Grid</string>
+    <string name="advanced_architecture_android">Усовершенствованная архитектура Android</string>
+    <string name="kotlin_aprentice">Изучение Kotlin</string>
+    <string name="kotlin_coroutines">Корутины в Kotlin</string>
+    <string name="cover_books">Обложки книг</string>
 
 </resources>
