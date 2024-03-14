@@ -42,7 +42,7 @@ private val items = listOf(
     Icons.Filled.Build,
     Icons.Filled.ThumbUp,
 )
-@ExperimentalFoundationApi
+// @ExperimentalFoundationApi
 @Composable
 fun GridScreen() {
     // GridView(columnCount = 3)
