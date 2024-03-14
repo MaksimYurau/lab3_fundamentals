@@ -3,8 +3,10 @@ package com.raywenderlich.android.lab3.screens
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Check
@@ -14,7 +16,12 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.ThumbUp
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
+import com.raywenderlich.android.lab3.R
 import com.raywenderlich.android.lab3.router.BackButtonHandler
 import com.raywenderlich.android.lab3.router.FundamentalsRouter
 import com.raywenderlich.android.lab3.router.Screen
@@ -54,21 +61,20 @@ fun GridView(columnCount: Int) { val itemSize = items.size
             if (position.inc() <= itemSize) {
                 rowItem.add(IconResource(items[position++], true))
             }
-
-            // here
-            val itemsToFill = columnCount - rowItem.size
-
-            for (j in 0 until itemsToFill) {
-                rowItem.add(IconResource(Icons.Filled.Delete, false))
-            }
-            gridItems.add(rowItem)
-        }
-
+    }
         // here
-        LazyColumn(modifier = Modifier.fillMaxSize()) {
-            items(gridItems) { items ->
-                RowItem(items)
-            }
+        val itemsToFill = columnCount - rowItem.size
+
+        for (j in 0 until itemsToFill) {
+            rowItem.add(IconResource(Icons.Filled.Delete, false))
+        }
+        gridItems.add(rowItem)
+    }
+
+    // here
+    LazyColumn(modifier = Modifier.fillMaxSize()) {
+        items(gridItems) { items ->
+            RowItem(items)
         }
     }
 }
@@ -83,7 +89,18 @@ fun RowItem(rowItems: List<IconResource>) {
 
 @Composable
 fun RowScope.GridIcon(iconResource: IconResource) {
-    //TODO add your code here
+    val color = if (iconResource.isVisible)
+        colorResource(R.color.colorPrimary)
+    else Color.Transparent
+
+    Icon(
+        imageVector = iconResource.imageVector,
+        tint = color,
+        contentDescription = stringResource(R.string.grid_icon),
+        modifier = Modifier
+            .size(88.dp, 88.dp)
+            .weight(1f)
+        )
 }
 
 data class IconResource(val imageVector: ImageVector, val isVisible: Boolean)

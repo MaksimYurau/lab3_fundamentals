@@ -33,5 +33,6 @@
     <string name="kotlin_aprentice">Изучение Kotlin</string>
     <string name="kotlin_coroutines">Корутины в Kotlin</string>
     <string name="cover_books">Обложки книг</string>
+    <string name="grid_icon">Grid icon</string>
 
 </resources>
