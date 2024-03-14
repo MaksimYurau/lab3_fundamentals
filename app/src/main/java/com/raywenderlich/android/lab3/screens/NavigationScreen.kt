@@ -6,7 +6,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Surface
@@ -29,7 +31,7 @@ fun NavigationScreen() {
         modifier = Modifier.fillMaxSize()
     ) {
         Column(
-            // modifier = Modifier.verticalScroll(rememberScrollState()),
+            modifier = Modifier.verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
@@ -45,8 +47,8 @@ fun NavigationScreen() {
             NavigationButton(stringResource(id = R.string.button_container_surface), Screen.Surface)
             NavigationButton(stringResource(id = R.string.button_container_scaffold), Screen.Scaffold)
             NavigationButton(stringResource(id = R.string.button_scrolling), Screen.Scrolling)
-            // NavigationButton(stringResource(id = R.string.button_list), Screen.List)
-            // NavigationButton(stringResource(id = R.string.button_grid), Screen.Grid)
+            NavigationButton(stringResource(id = R.string.button_list), Screen.List)
+            NavigationButton(stringResource(id = R.string.button_grid), Screen.Grid)
         }
     }
 }
