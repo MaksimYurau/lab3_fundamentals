@@ -1,5 +1,6 @@
 package com.raywenderlich.android.lab3.screens
 
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -74,7 +75,10 @@ fun GridView(columnCount: Int) { val itemSize = items.size
 
 @Composable
 fun RowItem(rowItems: List<IconResource>) {
-    //TODO add your code here
+    Row {
+        for (element in rowItems)
+            GridIcon(element)
+    }
 }
 
 @Composable
