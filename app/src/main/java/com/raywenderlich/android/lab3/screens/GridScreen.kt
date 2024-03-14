@@ -1,6 +1,9 @@
 package com.raywenderlich.android.lab3.screens
 
 import androidx.compose.foundation.layout.RowScope
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Build
 import androidx.compose.material.icons.filled.Check
@@ -9,6 +12,7 @@ import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.ThumbUp
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.raywenderlich.android.lab3.router.BackButtonHandler
 import com.raywenderlich.android.lab3.router.FundamentalsRouter
@@ -48,6 +52,21 @@ fun GridView(columnCount: Int) { val itemSize = items.size
         for (j in 0 until columnCount) {
             if (position.inc() <= itemSize) {
                 rowItem.add(IconResource(items[position++], true))
+            }
+
+            // here
+            val itemsToFill = columnCount - rowItem.size
+
+            for (j in 0 until itemsToFill) {
+                rowItem.add(IconResource(Icons.Filled.Delete, false))
+            }
+            gridItems.add(rowItem)
+        }
+
+        // here
+        LazyColumn(modifier = Modifier.fillMaxSize()) {
+            items(gridItems) { items ->
+                RowItem(items)
             }
         }
     }
